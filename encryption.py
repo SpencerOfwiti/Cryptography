@@ -88,9 +88,9 @@ def key_search(key_name: str) -> bool:
 
 class Encryptor:
     """This class is used to perform encryption and decryption of data items."""
-    with open('master_key.key') as key:
+    with open('keys/master_key.key') as key:
         _master_key = b64decode(key.read())
-    with open('master_iv.iv') as iv:
+    with open('ivs/master_iv.iv') as iv:
         _master_iv = b64decode(iv.read())
     _master_cipher = Cipher(algorithm=algorithms.AES(_master_key), mode=modes.CBC(_master_iv))
 
